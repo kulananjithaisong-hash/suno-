@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phephe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผีกระหัง</title>
+    <link rel="stylesheet" href="kahang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+      <nav class="navbar">
+        <h1 class="logo">suno หลาวทอง</h1>
+        <a href="kahang.html"><div class="menu"></a>
+            <a href="kahang.html" class="navkahang">
+    ผีกระหัง
+</a>
+            <a href="meanak.html" class="navmeanak">ผีแม่นาก</a>
+            <a href="kasue.html" class="navkasue">ผีกระสือ</a>
+        </div>
+    </nav>
+
+   <div class="background">
+
+    <div class="ghost" class=""><h1 style="margin: px;">คุณกลัวผีมั้ย</h1></div>
+    <div class="g1"> <h2>พลังงานไม่มีวันสูญหาย เพียงเเค่เปลี่ยนเเปลงรูปเเบบ</h2></div>
+
+    <div class="parent">
+        <div>
+            <a href="kahang.html" id="1"><img src="White Minimalist Horror Interactive Quiz Game Presentation - 3.png"  height="360px"> </alt="">
+            <p>ผีกระหัง</p>
+            </a>
+        </div>
+
+        <div>
+            <a href="meanak.html"><img src="White Minimalist Horror Interactive Quiz Game Presentation - 2.png"  height="360px"> </alt="">
+            <p>ผีเเม่นาก</p> 
+            </a>
+        </div>
+
+         <div>
+            <a href="kasue.html"><img src="White Minimalist Horror Interactive Quiz Game Presentation - 4.png"  height="360px"> </alt="">
+            <p>ผีกระสือ</p>
+            </a>
+        </div>
+    </div></div>
+
+    <div id="jumpscare-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; z-index: 9999; justify-content: center; align-items: center;">
+        <img id="scary-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTb26qJ_EyvMAD3yjf2RNDCw_626J0Z2omwQ&s" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // เลือกทุกลิงก์ที่อยู่ใน class parent
+    const links = document.querySelectorAll(".parent a");
+    const overlay = document.getElementById("jumpscare-overlay");
+
+    links.forEach(link => {
+        link.addEventListener("click", function(event) {
+            // 1. ระงับการไปหน้าอื่นทันที
+            event.preventDefault();
+            
+            // เก็บ URL ของหน้าที่จะไปไว้ในตัวแปร
+            const targetUrl = this.href;
+
+            // 2. แสดง Popup Jumpscare
+            overlay.style.display = "flex";
+
+            // 3. ตั้งเวลา (เช่น 1 วินาที) แล้วค่อยเปลี่ยนหน้า
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 1000); // 1000 คือ 1 วินาที ปรับเพิ่มหรือลดความไวได้ที่นี่
+        });
+    });
+});
+    </script>
+    
+    
+    ...
+</body>
+</html>

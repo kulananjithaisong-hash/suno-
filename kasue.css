@@ -1,34 +1,9 @@
 /* ==========================================
-   kahang.css — สไตล์สำหรับหน้าผีกระหัง
+   kasue.css — สไตล์สำหรับหน้าผีกระสือ
    ========================================== */
 
 
 /* ── รีเซ็ตค่าเริ่มต้น ── */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.charm-regular {
-  font-family: "Charm", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.charm-bold {
-  font-family: "Charm", cursive;
-  font-weight: 700;
-  font-style: normal;
-}
-
-
-body {
-    font-family: 'Sarabun', Arial, sans-serif;
-    background-color: #0a0f0a;
-    color: #0a0f0a;
-}
-
 * {
     font-family: "Thasadith", sans-serif;
     margin: 0;
@@ -36,32 +11,45 @@ body {
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Sarabun', Arial, sans-serif;
+    background-color: #0a0f0a;
+    color: #0a0f0a;
+}
+
 
 /* ── แถบ NAVBAR ── */
 .navbar {
-    background-color:#383532;
+    background-color: #383532;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 24px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .logo {
     color: #c9a96e;
 }
 
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+}
+
 .menu a {
     color: #c9a96e;
     text-decoration: none;
-    margin-left: 24px;
+    margin-left: 0;
 }
-
-
 
 
 /* ── กล่องหลัก ── */
 .container {
-    max-width:fit-content;
+    max-width: 960px;
+    width: 100%;
     margin: 20px auto;
     padding: 24px;
 }
@@ -70,20 +58,28 @@ body {
 /* ── แถวรูป + เนื้อหา ── */
 .content-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     margin-bottom: 24px;
 }
 
 .ghost-img {
+    width: 100%;
     max-width: 600px;
+    height: auto;
     max-height: 450px;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid #cccccc;
 }
 
+.text-box {
+    flex: 1;
+    min-width: 240px;
+}
+
 .text-box h2 {
-    font-size: 50px;
+    font-size: clamp(26px, 5vw, 50px);
     margin-bottom: 12px;
     color: #ff3333;
     display: flex;
@@ -92,7 +88,7 @@ body {
 }
 
 .text-box p {
-    font-size: 20px;
+    font-size: clamp(15px, 2.5vw, 20px);
     line-height: 1.8;
     color: #d4c9b8;
 }
@@ -100,7 +96,7 @@ body {
 
 /* ── กล่องคำอธิบาย ── */
 .description-box {
-    background-color:#780101;
+    background-color: #780101;
     border-style: solid;
     border-radius: 8px;
     padding: 16px 20px;
@@ -108,7 +104,7 @@ body {
 }
 
 .description-box p {
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     line-height: 1.8;
     color: white;
 }
@@ -127,10 +123,40 @@ body {
     height: 36px;
     line-height: 36px;
     text-align: center;
-    background-color: #c9a96e ;
+    background-color: #c9a96e;
     color: #ffffff;
     text-decoration: none;
     border-radius: 50%;
     font-size: 16px;
     font-weight: bold;
+}
+
+
+/* ── MOBILE ── */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .content-row {
+        flex-direction: column;
+    }
+
+    .ghost-img {
+        max-width: 100%;
+        max-height: none;
+    }
+
+    .text-box {
+        min-width: unset;
+    }
+
+    .text-box h2 {
+        align-items: flex-start;
+    }
 }
